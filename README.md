@@ -225,21 +225,65 @@ pnpm generate:types
 
 ## 🚀 Deployment
 
-### Production Build
+### Local Production Build
 
 ```bash
-pnpm build
-pnpm start
+npm run build
+npm start
 ```
 
-### Environment Variables (Production)
+### Vercel Deployment
+
+1. **Prerequisites**
+
+   - Vercel account
+   - MongoDB Atlas database (or other MongoDB service)
+   - OpenAI API key
+
+2. **Deploy to Vercel**
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel --prod
+```
+
+3. **Environment Variables**
+
+Add these to your Vercel dashboard:
 
 ```env
 NODE_ENV=production
-PAYLOAD_SECRET=secure-production-secret
-DATABASE_URI=mongodb://production-db-url
-OPENAI_API_KEY=production-openai-key
+PAYLOAD_SECRET=your-secure-production-secret
+DATABASE_URI=mongodb+srv://username:password@cluster.mongodb.net/ai-concierge-chatbot
+OPENAI_API_KEY=your-openai-api-key
 ```
+
+4. **Important Notes for Vercel**
+   - The build process automatically generates the import map
+   - TypeScript and ESLint errors are ignored during build (configured in `next.config.mjs`)
+   - Function timeout is set to 30 seconds in `vercel.json`
+
+### Docker Deployment
+
+```bash
+# Using Docker Compose
+docker-compose up
+
+# Or build custom image
+docker build -t ai-concierge .
+docker run -p 3000:3000 ai-concierge
+```
+
+### Troubleshooting Deployment Issues
+
+If you encounter build errors:
+
+1. **Missing Import Map**: The build script now automatically generates the import map
+2. **Type Errors**: These are ignored in production builds but should be fixed for development
+3. **Environment Variables**: Ensure all required env vars are set in your deployment platform
 
 ## 🔒 Security
 
