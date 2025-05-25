@@ -8,6 +8,9 @@ import { getPayload } from 'payload'
 export const GET = async () => {
   const payload = await getPayload({
     config: configPromise,
+    importMap: {
+      baseDir: process.cwd(),
+    },
   })
 
   const data = await payload.find({
