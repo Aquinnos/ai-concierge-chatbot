@@ -3,7 +3,7 @@ import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import OpenAI from 'openai'
 
-// API key for OpenAI should be set in environment variables
+// API key for OpenAI
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 })
@@ -21,8 +21,9 @@ const openai = new OpenAI({
  * An error response with status 500 if there is an issue processing the request.
  * @example
  * POST /api/chat
- * Request body: { "message": "What time is check-in?", "lang": "en" }
- * Response: { "answer": "Check-in is at 3 PM.", "source": "local" }
+ * Request body: { "message": "What time is check-out?", "lang": "en" }
+ * Response: { "answer": "Check-out time is at 11:00 AM. Late check-out may be available upon request.
+", "source": "local" }
  */
 export async function POST(req: Request) {
   try {

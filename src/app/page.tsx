@@ -1,12 +1,14 @@
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex flex-col gap-12">
-      <header className="p-6 flex justify-between items-center">
-        <span className="font-bold text-xl text-blue-700">AI Concierge for Turiscope</span>
-        <div>
+      <header className="p-4 md:p-6 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+        <span className="font-bold text-xl text-blue-700 text-center md:text-left">
+          AI Concierge for Turiscope
+        </span>
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
           <a
             href="#chat"
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition"
+            className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700 transition text-center"
           >
             Start Chat
           </a>
@@ -14,7 +16,7 @@ export default function Home() {
             href="/admin"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-4 bg-gray-200 text-blue-700 px-4 py-2 rounded-lg shadow hover:bg-gray-300 transition"
+            className="bg-gray-200 text-blue-700 px-4 py-2 rounded-lg shadow hover:bg-gray-300 transition text-center"
           >
             Admin Panel
           </a>

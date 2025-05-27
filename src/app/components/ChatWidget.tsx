@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
 import { PaperAirplaneIcon, XMarkIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
 
-// Define the Message interface to type the messages state
+// Interface for the messages state
 interface Message {
   text: string
   isUser: boolean
@@ -73,7 +73,7 @@ export default function ChatWidget() {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 right-auto z-50 md:bottom-4 md:right-4 md:left-auto md:translate-x-0">
       {!isOpen ? (
         <button
           onClick={() => setIsOpen(true)}
@@ -82,8 +82,8 @@ export default function ChatWidget() {
           <ChatBubbleLeftRightIcon className="h-6 w-6" />
         </button>
       ) : (
-        <div className="bg-white rounded-2xl shadow-2xl w-96 h-[600px] flex flex-col transform transition-all duration-300 ease-in-out">
-          <div className="p-4 border-b bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-2xl">
+        <div className="bg-white rounded-t-2xl md:rounded-2xl shadow-2xl w-full max-w-[98vw] h-[70vh] flex flex-col transform transition-all duration-300 ease-in-out md:w-96 md:h-[600px]">
+          <div className="p-3 md:p-4 border-b bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-t-2xl">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
@@ -108,7 +108,7 @@ export default function ChatWidget() {
             </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+          <div className="flex-1 overflow-y-auto p-2 md:p-4 space-y-4 bg-gray-50">
             {messages.length === 0 && (
               <div className="flex items-center justify-center h-full text-gray-400">
                 <p className="text-center">

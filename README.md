@@ -1,6 +1,6 @@
 # AI Concierge Chatbot for Hotels & Restaurants
 
-A modern, multilingual AI-powered chatbot designed for hotel and restaurant guests, built with Next.js 15, Payload CMS, and OpenAI integration. This project provides automated customer service capabilities with fallback to AI when local FAQ knowledge base doesn't contain the answer.
+A multilingual AI-powered chatbot designed for hotel and restaurant guests, built with Next.js 15, Payload CMS, and OpenAI integration. This project provides automated customer service capabilities with fallback to AI when local FAQ knowledge base doesn't contain the answer.
 
 ## 🎯 Project Overview
 
@@ -65,10 +65,9 @@ src/
 - **Media Management**: File upload capabilities
 - **Real-time Updates**: Changes reflect immediately in chatbot
 
-### 4. Modern UI/UX
+### 4. UI/UX
 
 - **Responsive Design**: Works on desktop and mobile
-- **Gradient Animations**: Modern visual effects
 - **Loading States**: Smooth user experience
 - **Accessible**: Keyboard navigation and screen reader support
 
@@ -79,7 +78,7 @@ src/
 - Node.js 18.20.2+ or 20.9.0+
 - MongoDB database
 - OpenAI API key
-- pnpm package manager
+- npm package manager
 
 ### Environment Configuration
 
@@ -98,30 +97,19 @@ OPENAI_API_KEY=your-openai-api-key
 ```bash
 git clone <repository-url>
 cd ai-concierge-chatbot
-pnpm install
+npm install
 ```
 
 2. **Start Development Server**
 
 ```bash
-pnpm dev
+npm dev
 ```
 
 3. **Access the Application**
 
 - Frontend: http://localhost:3000
 - Admin Panel: http://localhost:3000/admin
-
-### Docker Deployment
-
-```bash
-# Using Docker Compose
-docker-compose up
-
-# Or build custom image
-docker build -t ai-concierge .
-docker run -p 3000:3000 ai-concierge
-```
 
 ## 📊 API Endpoints
 
@@ -196,10 +184,10 @@ Add new fields to the [`FAQ`](src/collections/FAQ.ts) collection:
 
 ```bash
 # Lint code
-pnpm lint
+npm run lint
 
 # Type checking
-pnpm generate:types
+npm run type-check
 ```
 
 ### Manual Testing Scenarios
