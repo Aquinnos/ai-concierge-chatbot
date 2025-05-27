@@ -256,10 +256,6 @@ This project demonstrates:
 - Database design and optimization
 - Production deployment strategies
 
-## 📄 License
-
-MIT License - see LICENSE file for details
-
 ## 👨‍💻 Author
 
 **Krystian Synakowski**
