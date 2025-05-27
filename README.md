@@ -197,20 +197,6 @@ npm run type-check
 3. **Language Switching**: Verify responses in both languages
 4. **Admin Panel**: Test CRUD operations on FAQ entries
 
-## 📈 Performance Considerations
-
-### Optimization Features
-
-- **Next.js 15**: Latest performance improvements
-- **Static Generation**: Pre-built pages where possible
-- **Code Splitting**: Automatic bundle optimization
-
-### Monitoring
-
-- Response time tracking in chat API
-- OpenAI token usage monitoring
-- Database query optimization
-
 ## 🚀 Deployment
 
 ### Local Production Build
@@ -248,46 +234,6 @@ PAYLOAD_SECRET=your-secure-production-secret
 DATABASE_URI=mongodb+srv://username:password@cluster.mongodb.net/ai-concierge-chatbot
 OPENAI_API_KEY=your-openai-api-key
 ```
-
-4. **Important Notes for Vercel**
-   - The build process automatically generates the import map
-   - TypeScript and ESLint errors are ignored during build (configured in `next.config.mjs`)
-   - Function timeout is set to 30 seconds in `vercel.json`
-
-### Docker Deployment
-
-```bash
-# Using Docker Compose
-docker-compose up
-
-# Or build custom image
-docker build -t ai-concierge .
-docker run -p 3000:3000 ai-concierge
-```
-
-### Troubleshooting Deployment Issues
-
-If you encounter build errors:
-
-1. **Missing Import Map**: The build script now automatically generates the import map
-2. **Type Errors**: These are ignored in production builds but should be fixed for development
-3. **Environment Variables**: Ensure all required env vars are set in your deployment platform
-
-## 🔒 Security
-
-### Implemented Security Measures
-
-- Environment variable protection
-- Payload CMS authentication
-- API rate limiting considerations
-- Input sanitization
-
-### Recommendations
-
-- Use strong `PAYLOAD_SECRET` in production
-- Implement API rate limiting
-- Regular security updates
-- Monitor OpenAI API usage
 
 ## 📚 Academic Context
 
